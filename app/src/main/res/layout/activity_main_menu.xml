@@ -1,0 +1,50 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/RelativeLayout_MainMenu">
+
+
+    <TextView
+        android:id="@+id/TextView_MainMenu_Title"
+        android:text="Golf Stats"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="34sp"
+        android:textColor="@android:color/black"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:id="@+id/Button_MainMenu_NewGame"
+        android:text="New Game"
+        android:textSize="34sp"
+        android:layout_below="@id/TextView_MainMenu_Title"
+        android:textAllCaps="false"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="75sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="setupNewGame"/>
+
+    <Button
+        android:id="@+id/Button_MainMenu_ContinueGame"
+        android:text="Continue Game"
+        android:textSize="34sp"
+        android:layout_below="@id/Button_MainMenu_NewGame"
+        android:textAllCaps="false"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="75sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="continueGame"/>
+
+    <TextView
+        android:id="@+id/TextView_MainMenu_ContinueGameInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/Button_MainMenu_ContinueGame"
+        android:text="May 20th, Hole 14"
+        android:textSize="24sp"
+        android:layout_centerHorizontal="true"/>
+
+</RelativeLayout>
