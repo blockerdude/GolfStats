@@ -1,51 +1,50 @@
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/RelativeLayout_MainMenu"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:id="@+id/RelativeLayout_MainMenu">
+    android:layout_height="match_parent">
 
 
     <TextView
         android:id="@+id/TextView_MainMenu_Title"
-        android:text="Golf Stats"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="34sp"
-        android:textColor="@android:color/black"
+        android:layout_centerHorizontal="true"
         android:background="@android:color/holo_blue_bright"
-        android:layout_centerHorizontal="true" />
+        android:text="Golf Stats"
+        android:textColor="@android:color/black"
+        android:textSize="34sp" />
 
     <Button
         android:id="@+id/Button_MainMenu_NewGame"
-        android:text="New Game"
-        android:textSize="34sp"
-        android:layout_below="@id/TextView_MainMenu_Title"
-        android:textAllCaps="false"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="75sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="setupNewGame"/>
+        android:layout_below="@id/TextView_MainMenu_Title"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="75sp"
+        android:onClick="setupNewGame"
+        android:text="New Game"
+        android:textAllCaps="false"
+        android:textSize="34sp" />
 
     <Button
         android:id="@+id/Button_MainMenu_ContinueGame"
-        android:text="Continue Game"
-        android:textSize="34sp"
-        android:layout_below="@id/Button_MainMenu_NewGame"
-        android:textAllCaps="false"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="75sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="continueGame"/>
+        android:layout_below="@id/Button_MainMenu_NewGame"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="75sp"
+        android:onClick="continueGame"
+        android:text="Continue Game"
+        android:textAllCaps="false"
+        android:textSize="34sp" />
 
     <TextView
         android:id="@+id/TextView_MainMenu_ContinueGameInfo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/Button_MainMenu_ContinueGame"
+        android:layout_centerHorizontal="true"
         android:text="May 20th, Hole 14"
-        android:textSize="24sp"
-        android:layout_centerHorizontal="true"/>
+        android:textSize="24sp" />
 
 </RelativeLayout>
