@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/TextView_Generic_Hole_Template_HoleTitle"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textSize="32sp"
+        android:gravity="center"
+        android:textColor="@android:color/black"
+        android:text= "Hole:"/>
+
+
+    <ScrollView
+        android:id="@+id/ScrollView_Generic_Hole_Template_StatList"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@id/TextView_Generic_Hole_Template_HoleTitle">
+
+        <LinearLayout
+            android:id="@+id/LinearLayout_Generic_Hole_Template_PlayerList"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
+</RelativeLayout>
