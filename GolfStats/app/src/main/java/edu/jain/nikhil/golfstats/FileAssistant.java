@@ -11,23 +11,29 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.LineNumberReader;
 import java.io.OutputStreamWriter;
+import java.io.Serializable;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
+import java.util.Scanner;
 
 /**
  * Created by Nikhil on 7/29/2015.
  */
-public class FileAssistant {
+public class FileAssistant implements Serializable {
 
     private int currentHoleNum;
     private final String TEMPFILENAME = "GolfStatsAppTemporaryFile.txt";
     private final String FILENAME = "GolfStatsAppStatistics.txt";
-    private File file = null;
-    private File tempFile = null;
-    private FileInputStream fis = null;
-    private FileOutputStream fos = null;
-    private BufferedWriter fileWriter = null;
-    private LineNumberReader fileReader = null;
+
+    private transient File file = null;
+    private transient File tempFile = null;
+    private transient FileInputStream fis = null;
+    private transient FileOutputStream fos = null;
+    private transient BufferedWriter fileWriter = null;
+    private transient LineNumberReader fileReader = null;
+
     private GameStats gameStats;
 
     public FileAssistant(int currentHoleNum, Context context, GameStats stats) {
@@ -48,6 +54,7 @@ public class FileAssistant {
             e.printStackTrace();
         }
     }
+
     public FileAssistant(Context context, GameStats stats) {
         new FileAssistant(determineCurrentHole(), context, stats);
     }
@@ -58,13 +65,6 @@ public class FileAssistant {
 
     private void setWriter() {
         fileWriter = new BufferedWriter(new OutputStreamWriter(fos));
-    }
-
-    public String getLastDayPlayed() {
-        String firstLine = getFileLine(0);
-        String date = firstLine.substring(2);
-        //do any cleaning on the string
-        return date;
     }
 
     public int getCurrentHole() {
@@ -97,12 +97,13 @@ public class FileAssistant {
     public void setHoleInfo(List<PlayerStat> stats) {
         int lineNum = getHoleLineNumber(currentHoleNum);
         ArrayList<String> convertedStats = new ArrayList<String>();
-        for(int x=0; x<stats.size(); x++){
+        for (int x = 0; x < stats.size(); x++) {
             convertedStats.add(stats.toString());
         }
         setFileLines(lineNum, convertedStats);
     }
-    public void setHoleInfoForPlayer(PlayerStat stat, int playerNum){
+
+    public void setHoleInfoForPlayer(PlayerStat stat, int playerNum) {
         int lineNum = getHoleLineNumber(currentHoleNum, playerNum);
         setFileLine(lineNum, stat.toString());
     }
@@ -119,7 +120,8 @@ public class FileAssistant {
         }
         return (introOffset + holeOffset);
     }
-    private int getHoleLineNumber(int holeNum, int playerNum){
+
+    private int getHoleLineNumber(int holeNum, int playerNum) {
         return (getHoleLineNumber(holeNum) + playerNum);
     }
 
@@ -136,6 +138,30 @@ public class FileAssistant {
             e.printStackTrace();
         }
     }
+
+    public void writePlayersToFile(ArrayList<String> players) {
+        for (int x = 0; x < players.size(); x++) {
+
+        }
+
+    }
+    public void setLastTimePlayed(){
+        String lastPlayedInfo = "";
+        Calendar calendar = Calendar.getInstance();
+        String month = new SimpleDateFormat("MMMM").format(calendar.getTime());
+        int day = calendar.get(Calendar.DAY_OF_MONTH);
+        int holeNum = this.getCurrentHole();
+        lastPlayedInfo += holeNum + month + " " +day;
+        setFileLine(0,lastPlayedInfo);
+    }
+    public String getLastDayPlayed() {
+        String firstLine = getFileLine(0);
+        String date = firstLine.substring(2);
+        int res = new Scanner(firstLine).useDelimiter("\\D+").nextInt();
+        return date;
+    }
+
+
 
     private ArrayList<String> getFileLines(int startFileLine, int endFileLine) {
         ArrayList<String> lines = new ArrayList<String>();
@@ -177,11 +203,13 @@ public class FileAssistant {
             e.printStackTrace();
         }
     }
-    private void setFileLine(int lineNum, String line){
+
+    private void setFileLine(int lineNum, String line) {
         ArrayList<String> replacement = new ArrayList<String>();
         replacement.add(line);
         setFileLines(lineNum, replacement);
     }
+
     private void setFileLines(int startingLineNum, ArrayList<String> replacement) {
         //go to line num
         //get length

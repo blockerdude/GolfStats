@@ -53,9 +53,19 @@ public class NewGameSetup extends Activity {
             EditText editText = (EditText)players.get(x).findViewById(R.id.EditText_AddPlayerElement_PlayerName);
             editText.setText("WORKS" + editText.getText());
         }
+
         */
-        Intent HoleIntent=new Intent(this, Hole.class);
-        startActivity(HoleIntent);
+        //TODO: build game stats correctly
+        int numTotalPlayers = players.size();
+        GameStats gameStats = new GameStats(numTotalPlayers,numTotalPlayers);
+
+        FileAssistant fileAssistant = new FileAssistant(1, this.getApplicationContext(), gameStats);
+
+
+        Intent holeIntent=new Intent(this, Hole.class);
+        holeIntent.putExtra("gameStats", gameStats);
+        holeIntent.putExtra("assistant",fileAssistant);
+        startActivity(holeIntent);
         finish();
 
     }

@@ -16,7 +16,8 @@
         android:id="@+id/ScrollView_Generic_Hole_Template_StatList"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:layout_below="@id/TextView_Generic_Hole_Template_HoleTitle">
+        android:layout_below="@id/TextView_Generic_Hole_Template_HoleTitle"
+        android:layout_above="@+id/LinearLayout_Generic_Hole_Template_ButtonList">
 
         <LinearLayout
             android:id="@+id/LinearLayout_Generic_Hole_Template_PlayerList"
@@ -28,6 +29,33 @@
 
 
     </ScrollView>
+    <LinearLayout
+        android:id="@+id/LinearLayout_Generic_Hole_Template_ButtonList"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true">
+
+        <Button
+            android:id="@+id/Button_Generic_Hole_Template_PreviousButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="25sp"
+            android:text="Previous"
+            android:onClick="previousHole"/>
+
+        <Button
+            android:id="@+id/Button_Generic_Hole_Template_NextButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="24sp"
+            android:text="Next"
+            android:onClick="nextHole"/>
+
+
+    </LinearLayout>
 
 
 </RelativeLayout>
