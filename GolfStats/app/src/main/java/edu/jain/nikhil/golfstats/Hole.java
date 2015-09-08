@@ -33,12 +33,11 @@ public class Hole extends Activity {
         int holeNum = fileAssistant.getCurrentHole();
         TextView textView = (TextView) this.findViewById(R.id.TextView_Generic_Hole_Template_HoleTitle);
         textView.setText("Hole: " + holeNum);
-        if(fileAssistant.getCurrentHole() == 1){
+        if (fileAssistant.getCurrentHole() == 1) {
             //disable previous button
             Button previousButton = (Button) findViewById(R.id.Button_Generic_Hole_Template_PreviousButton);
             previousButton.setEnabled(false);
-        }
-        else if(fileAssistant.getCurrentHole() == 18){
+        } else if (fileAssistant.getCurrentHole() == 18) {
             final Button nextButton = (Button) findViewById(R.id.Button_Generic_Hole_Template_NextButton);
             nextButton.setText("Finish Game");
             nextButton.setOnClickListener(new View.OnClickListener() {

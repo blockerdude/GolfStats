@@ -23,7 +23,9 @@
             android:name=".NewGameSetup"
             android:label="@string/title_activity_new_game_setup">
         </activity>
-        <activity android:name=".Hole"
-            android:label="Hole"></activity>
+        <activity
+            android:name=".Hole"
+            android:label="Hole">
+        </activity>
     </application>
 </manifest>
