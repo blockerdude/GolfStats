@@ -20,6 +20,7 @@
             android:textSize="30sp" />
 
         <Button
+            android:id="@+id/Button_Player_Game_Perspective_ChangeView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="start"

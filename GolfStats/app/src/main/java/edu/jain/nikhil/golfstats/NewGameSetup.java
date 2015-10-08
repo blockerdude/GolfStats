@@ -34,8 +34,8 @@ public class NewGameSetup extends Activity {
         text++;
        // moveScrollPosition();
         //request the focus, pop up the keyboard
-        eText.requestFocus();
-        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE);
+        //eText.requestFocus();
+        //getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE);
        // players.add(playerEntry);
 
 

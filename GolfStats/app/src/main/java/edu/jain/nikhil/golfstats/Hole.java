@@ -58,6 +58,9 @@ public class Hole extends Activity {
             playerName.setText("Player " + x);
             View toPopulate = expanded.getChildAt(x);
             populateStats(toPopulate);
+            //Button collapse = (Button) expanded.findViewById(R.id.Button_Player_Game_Perspective_ChangeView);
+
+            //changeView(collapse);
         }
     }
 
