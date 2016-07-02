@@ -25,3 +25,8 @@ proguard/
 
 # Log Files
 *.log
+GolfStats/.idea/gradle.xml
+GolfStats/.idea/gradle.xml
+GolfStats/.idea/misc.xml
+GolfStats/build.gradle
+GolfStats/GolfStats.iml

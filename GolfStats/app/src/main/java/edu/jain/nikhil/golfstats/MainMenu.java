@@ -15,17 +15,15 @@ public class MainMenu extends Activity {
 
         //see if there is a file created
 
-            //if not create it
+        //if not create it
 
         //load old file
 
         //determine if there is a game in progress
 
-            //if not, grey out the continue game option
+        //if not, grey out the continue game option
 
-            //if yes add info (date + hole #) to the screen
-
-
+        //if yes add info (date + hole #) to the screen
 
 
     }
@@ -34,10 +32,10 @@ public class MainMenu extends Activity {
     /*
     Starts a new game for the user
      */
-    public void setupNewGame(View view){
+    public void setupNewGame(View view) {
 
 
-        Intent NewGameSetupIntent=new Intent(this, NewGameSetup.class);
+        Intent NewGameSetupIntent = new Intent(this, NewGameSetup.class);
         startActivity(NewGameSetupIntent);
         finish();
         //wipe the stored info file
@@ -48,7 +46,7 @@ public class MainMenu extends Activity {
     /*
     Loads the previous game for the user
      */
-    public void continueGame(View view){
+    public void continueGame(View view) {
 
         //pull up old file
 

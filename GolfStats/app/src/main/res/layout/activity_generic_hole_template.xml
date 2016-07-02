@@ -17,7 +17,8 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_below="@id/TextView_Generic_Hole_Template_HoleTitle"
-        android:layout_above="@+id/LinearLayout_Generic_Hole_Template_ButtonList">
+        android:layout_above="@+id/LinearLayout_Generic_Hole_Template_ButtonList"
+        android:fillViewport="false">
 
         <LinearLayout
             android:id="@+id/LinearLayout_Generic_Hole_Template_PlayerList"

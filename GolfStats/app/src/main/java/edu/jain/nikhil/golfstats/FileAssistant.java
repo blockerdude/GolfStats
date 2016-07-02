@@ -145,22 +145,23 @@ public class FileAssistant implements Serializable {
         }
 
     }
-    public void setLastTimePlayed(){
+
+    public void setLastTimePlayed() {
         String lastPlayedInfo = "";
         Calendar calendar = Calendar.getInstance();
         String month = new SimpleDateFormat("MMMM").format(calendar.getTime());
         int day = calendar.get(Calendar.DAY_OF_MONTH);
         int holeNum = this.getCurrentHole();
-        lastPlayedInfo += holeNum + month + " " +day;
-        setFileLine(0,lastPlayedInfo);
+        lastPlayedInfo += holeNum + month + " " + day;
+        setFileLine(0, lastPlayedInfo);
     }
+
     public String getLastDayPlayed() {
         String firstLine = getFileLine(0);
         String date = firstLine.substring(2);
         int res = new Scanner(firstLine).useDelimiter("\\D+").nextInt();
         return date;
     }
-
 
 
     private ArrayList<String> getFileLines(int startFileLine, int endFileLine) {
@@ -221,6 +222,7 @@ public class FileAssistant implements Serializable {
             int numLinesToReplace = replacement.size();
             int maxLineNumber = fileReader.getLineNumber() + 1; //+1 because of 1 based index for files and line index starts at 0.
             ArrayList<String> fileLines = getFileLines(0, maxLineNumber);
+
             //write the beginning
             for (int x = 0; x < startingLineNum; x++) {
                 fileWriter.write(fileLines.get(x));

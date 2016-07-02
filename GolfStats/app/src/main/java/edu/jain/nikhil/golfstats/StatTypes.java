@@ -10,8 +10,8 @@ public enum StatTypes {
     NOTPLAYING(9);
     private int value;
 
-    private StatTypes(int value) {
-        this.value = value;
+    StatTypes(int value) {
+        value = value;
     }
     public String toString(){
         return "" + value;

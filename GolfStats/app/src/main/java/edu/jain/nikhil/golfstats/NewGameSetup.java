@@ -14,7 +14,8 @@ import java.util.ArrayList;
 public class NewGameSetup extends Activity {
 
     private ArrayList<View> players;
-    private int text =0;
+    private int text = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,20 +24,20 @@ public class NewGameSetup extends Activity {
         addPlayer(this.findViewById(android.R.id.content).getRootView());
     }
 
-    public void addPlayer(View view){
+    public void addPlayer(View view) {
         LinearLayout playerLayout = (LinearLayout) findViewById(R.id.LinearLayout_NewGameSetup_PlayerEntry);
         View.inflate(this, R.layout.add_player_element, playerLayout);
         //EditText etext = (EditText)playerEntry.findViewById(R.id.EditText_AddPlayerElement_PlayerName);
         //etext.setText("BUtts"+text);
         players.add(playerLayout.getChildAt(text).findViewById(R.id.EditText_AddPlayerElement_PlayerName));
-        EditText eText = (EditText)players.get(text).findViewById(R.id.EditText_AddPlayerElement_PlayerName);
-        eText.setText(""+text);
+        EditText eText = (EditText) players.get(text).findViewById(R.id.EditText_AddPlayerElement_PlayerName);
+        eText.setText("" + text);
         text++;
-       // moveScrollPosition();
+        // moveScrollPosition();
         //request the focus, pop up the keyboard
         //eText.requestFocus();
         //getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE);
-       // players.add(playerEntry);
+        // players.add(playerEntry);
 
 
     }
@@ -47,7 +48,7 @@ public class NewGameSetup extends Activity {
     }
     */
 
-    public void startGame(View view){
+    public void startGame(View view) {
         /*
         for(int x=0; x<players.size(); x++){
             EditText editText = (EditText)players.get(x).findViewById(R.id.EditText_AddPlayerElement_PlayerName);
@@ -57,14 +58,14 @@ public class NewGameSetup extends Activity {
         */
         //TODO: build game stats correctly
         int numTotalPlayers = players.size();
-        GameStats gameStats = new GameStats(numTotalPlayers,numTotalPlayers);
+        GameStats gameStats = new GameStats(numTotalPlayers, numTotalPlayers);
 
         FileAssistant fileAssistant = new FileAssistant(1, this.getApplicationContext(), gameStats);
 
 
-        Intent holeIntent=new Intent(this, Hole.class);
+        Intent holeIntent = new Intent(this, Hole.class);
         holeIntent.putExtra("gameStats", gameStats);
-        holeIntent.putExtra("assistant",fileAssistant);
+        holeIntent.putExtra("assistant", fileAssistant);
         startActivity(holeIntent);
         finish();
 

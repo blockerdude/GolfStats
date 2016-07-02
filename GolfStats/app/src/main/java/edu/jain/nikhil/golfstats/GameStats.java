@@ -16,15 +16,16 @@ public class GameStats implements Serializable {
     private int totalPlayers;
     private int backNinePlayers;
 
-    public GameStats(int tPlayers, int bnPlayers){
+    public GameStats(int tPlayers, int bnPlayers) {
         totalPlayers = tPlayers;
         backNinePlayers = bnPlayers;
     }
 
-    public int getNumTotalPlayers(){
+    public int getNumTotalPlayers() {
         return totalPlayers;
     }
-    public int getNumBackNinePlayers(){
+
+    public int getNumBackNinePlayers() {
         return backNinePlayers;
     }
 
